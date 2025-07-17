@@ -14,10 +14,9 @@ import java.net.http.HttpResponse;
 public class AWSCharactersProvider implements CharactersProvider {
     private static final String CharactersUri = "https://s3.eu-west-2.amazonaws.com/build-circle/characters.json";
 
-    @Autowired
     private ObjectMapper objectMapper;
 
-    public AWSCharactersProvider(ObjectMapper objectMapper)
+    public AWSCharactersProvider(@Autowired ObjectMapper objectMapper)
     {
         this.objectMapper = objectMapper;
     }
@@ -29,7 +28,7 @@ public class AWSCharactersProvider implements CharactersProvider {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(CharactersUri))
-                .GET() // GET is default
+                .GET()
                 .build();
 
         HttpResponse<String> response = client.send(request,

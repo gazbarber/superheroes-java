@@ -11,5 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CharactersResponse {
 
-    private CharacterResponse[] items;
+    private Character[] items;
 }
