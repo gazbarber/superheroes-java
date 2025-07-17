@@ -20,7 +20,7 @@ import static com.buildcircle.superheroes.characters.CharacterType.hero;
 import static com.buildcircle.superheroes.characters.CharacterType.villain;
 
 @ExtendWith(MockitoExtension.class)
-class BattleUnitTests {
+public class BattleUnitTests {
 
     @Mock
     static CharactersProvider mockCharacterProvider;
@@ -30,7 +30,7 @@ class BattleUnitTests {
 
 
     @Test
-    void whenBatmanBattlesJokerWeaknessVillainBatmanLoses() throws IOException, InterruptedException {
+    public void whenBatmanBattlesJokerWeaknessVillainBatmanLoses() throws IOException, InterruptedException {
 
         Character[] responses = new Character[2];
         responses[0] = new Character("Batman",8.3, hero, "Joker");
@@ -54,7 +54,7 @@ class BattleUnitTests {
     }
 
     @Test
-    void whenSupermanBattlesJokerWeaknessVillainSupermanWins() throws IOException, InterruptedException {
+    public void whenSupermanBattlesJokerWeaknessVillainSupermanWins() throws IOException, InterruptedException {
 
         Character[] responses = new Character[2];
         responses[0] = new Character("Superman",9.3, hero, "Lex Luthor");
@@ -77,7 +77,7 @@ class BattleUnitTests {
     }
 
     @Test
-    void whenTwoOfTheSameTypeBattleResultsInBadRequest() throws IOException, InterruptedException {
+    public void whenTwoOfTheSameTypeBattleResultsInBadRequest() throws IOException, InterruptedException {
 
         Character[] responses = new Character[4];
         responses[0] = new Character("Batman",8.3, hero, "Joker");
@@ -101,7 +101,7 @@ class BattleUnitTests {
         Assert.assertThrows(InvalidBattleException.class, () -> battleController.battle(villain1 , villain2));
     }
     @Test
-    void whenUnknownVillainResutlsInBadRequest() throws IOException, InterruptedException {
+    public void whenUnknownVillainResultsInBadRequest() throws IOException, InterruptedException {
 
         Character[] responses = new Character[2];
         responses[0] = new Character("Batman", 8.3, hero, "Joker");

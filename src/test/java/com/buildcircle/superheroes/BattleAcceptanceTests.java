@@ -2,16 +2,13 @@ package com.buildcircle.superheroes;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = SuperheroesApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class BattleAcceptanceTests {
+public class BattleAcceptanceTests {
 
     @LocalServerPort
     private int port;
@@ -23,7 +20,7 @@ class BattleAcceptanceTests {
     }
 
     @Test
-    void whenBatmanBattlesJoker() {
+    public void whenBatmanBattlesJoker() {
         //Given
         HttpEntity<String> entity = new HttpEntity<String>(null, new HttpHeaders());
 
@@ -38,7 +35,7 @@ class BattleAcceptanceTests {
     }
 
     @Test
-    void whenSupermanBattlesLexLuthor() {
+    public void whenSupermanBattlesLexLuthor() {
         //Given
         HttpEntity<String> entity = new HttpEntity<String>(null, new HttpHeaders());
         //When
@@ -52,7 +49,7 @@ class BattleAcceptanceTests {
     }
 
     @Test
-    void whenBatmanBattlesSuperman() {
+    public void whenBatmanBattlesSuperman() {
         //Given
         HttpEntity<String> entity = new HttpEntity<String>(null, new HttpHeaders());
 
@@ -66,7 +63,7 @@ class BattleAcceptanceTests {
     }
 
     @Test
-    void whenBatmanBattlesNoOne() {
+    public void whenBatmanBattlesNoOne() {
         //Given
         HttpEntity<String> entity = new HttpEntity<String>(null, new HttpHeaders());
 
